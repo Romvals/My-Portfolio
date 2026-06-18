@@ -699,6 +699,22 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="project-card bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md animate-on-scroll animate-scale" style="transition-delay: 0.6s;" onclick="openModal('birthsystemModal')">
+                    <div class="h-40 sm:h-48 overflow-hidden bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center p-3 sm:p-4">
+                        <img src="lgu-magsaysay.png" alt="Municipality of Magsaysay Birth System" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/400x300/3b4bff/white?text=Magsaysay+Government'">
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                            <h3 class="text-lg md:text-xl font-bold">LCR Birth System</h3>
+                            <span class="bg-primary/10 dark:bg-primary/15 text-primary text-xs px-2 py-1 rounded-full text-center">Government Birth System</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm md:text-base">Developed and deployed a web-based record management system that digitalizes data using Google Sheets as the database.</p>
+                        <button class="text-primary font-medium flex items-center gap-1 text-sm md:text-base group">
+                            View Details <i class="fas fa-arrow-right text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1013,6 +1029,39 @@
                 </div>
                 <div class="mt-6 flex justify-end">
                     <button onclick="closeModal('govpageModal')" class="bg-primary text-white px-4 py-2 rounded-lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="birthsystemModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black/50 backdrop-blur-sm">
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="bg-white dark:bg-slate-800 rounded-xl max-w-3xl w-full p-6">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-bold">Birth System</h3>
+                    <button onclick="closeModal('birthsystemModal')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="mt-4">
+                    <video controls class="w-full rounded-lg" muted playsinline disableRemotePlayback style="pointer-events: auto;">
+                        <source src="lcr_birth_system.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Features heading -->
+                    <h4 class="font-semibold text-lg mt-5 mb-3 text-gray-800 dark:text-gray-200">Features:</h4>
+                    
+                    <!-- Two-column grid layout to reduce right space -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Data Analytics Dashboard</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>All Registry Records</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Book Records</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Create and Update Records</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Search and Filter Records</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Print Records</span></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal('birthsystemModal')" class="bg-primary text-white px-4 py-2 rounded-lg">Close</button>
                 </div>
             </div>
         </div>
