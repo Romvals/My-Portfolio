@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Romulo David Valerio | Full Stack Developer & IT Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b4bff',
+                        primaryDark: '#5c6aff',
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-left': 'fadeInLeft 0.8s ease-out',
+                        'fade-in-right': 'fadeInRight 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-down': 'slideDown 0.6s ease-out',
+                        'scale-up': 'scaleUp 0.5s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'spin-slow': 'spinSlow 8s linear infinite',
+                        'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s ease-in-out infinite',
+                        'rotate-in': 'rotateIn 0.7s ease-out',
+                        'blur-in': 'blurIn 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        fadeInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        scaleUp: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 5px rgba(59, 75, 255, 0.3)' },
+                            '50%': { boxShadow: '0 0 20px rgba(59, 75, 255, 0.6)' },
+                        },
+                        spinSlow: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        },
+                        bounceSubtle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        rotateIn: {
+                            '0%': { transform: 'rotate(-10deg)', opacity: '0' },
+                            '100%': { transform: 'rotate(0)', opacity: '1' },
+                        },
+                        blurIn: {
+                            '0%': { filter: 'blur(10px)', opacity: '0' },
+                            '100%': { filter: 'blur(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+        }
+        
+        .animate-fade-up {
+            transform: translateY(40px);
+        }
+        
+        .animate-fade-up.animated {
+            transform: translateY(0);
+        }
+        
+        .animate-fade-left {
+            transform: translateX(-40px);
+        }
+        
+        .animate-fade-left.animated {
+            transform: translateX(0);
+        }
+        
+        .animate-fade-right {
+            transform: translateX(40px);
+        }
+        
+        .animate-fade-right.animated {
+            transform: translateX(0);
+        }
+        
+        .animate-scale {
+            transform: scale(0.9);
+        }
+        
+        .animate-scale.animated {
+            transform: scale(1);
+        }
+        
+        .animate-rotate {
+            transform: rotate(-5deg);
+            opacity: 0;
+        }
+        
+        .animate-rotate.animated {
+            transform: rotate(0);
+            opacity: 1;
+        }
+        
+        /* Navigation styles */
+        .nav-container {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b4bff;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .active::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            position: relative;
+        }
+        
+        .hamburger-top, .hamburger-middle, .hamburger-bottom {
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: #3b4bff;
+            transition: all 0.5s;
+        }
+        
+        .dark .hamburger-top, .dark .hamburger-middle, .dark .hamburger-bottom {
+            background: #ffffff;
+        }
+        
+        .hamburger-middle { transform: translateY(7px); }
+        .hamburger-bottom { transform: translateY(14px); }
+        .open .hamburger-top { transform: rotate(45deg) translateY(6px) translate(6px); }
+        .open .hamburger-middle { display: none; }
+        .open .hamburger-bottom { transform: rotate(-45deg) translateY(6px) translate(-6px); }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(12px);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 40;
+            }
+            .dark .nav-container { 
+                background-color: rgba(15, 23, 42, 0.98); 
+            }
+            .nav-container.open { 
+                transform: translateX(0); 
+            }
+            .nav-links { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 2rem; 
+            }
+            .nav-link {
+                font-size: 1.25rem;
+                color: #1e293b;
+            }
+            .dark .nav-link {
+                color: #f1f5f9;
+            }
+        }
+        
+        .project-card { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .project-card:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2); 
+        }
+        
+        .skill-bar { 
+            height: 8px; 
+            border-radius: 4px; 
+            background-color: #e2e8f0; 
+            overflow: hidden; 
+        }
+        .skill-progress { 
+            height: 100%; 
+            border-radius: 4px; 
+            background: linear-gradient(90deg, #3b4bff, #5c6aff, #3b4bff);
+            background-size: 200% 100%;
+            transition: width 1.2s cubic-bezier(0.22,1,0.36,1); 
+            animation: shimmer 2s ease-in-out infinite;
+        }
+        .dark .skill-bar { 
+            background-color: #334155; 
+        }
+        
+        .wave-divider { 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            overflow: hidden; 
+            line-height: 0; 
+        }
+        .wave-divider svg { 
+            position: relative; 
+            display: block; 
+            width: calc(100% + 1.3px); 
+            height: 80px; 
+        }
+        .wave-divider .shape-fill { 
+            fill: #3b4bff; 
+        }
+        .dark .wave-divider .shape-fill { 
+            fill: #0f172a; 
+        }
+
+        /* Hide volume button on video controls */
+        video::-webkit-media-controls-volume-slider,
+        video::-webkit-media-controls-mute-button,
+        video::-webkit-media-controls-volume-control-container {
+            display: none !important;
+        }
+        
+        video::-moz-media-controls-volume-slider,
+        video::-moz-media-controls-mute-button {
+            display: none !important;
+        }
+
+        /* Responsive modal */
+        @media (max-width: 640px) {
+            .modal-content {
+                margin: 1rem;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+        }
+
+        /* Dark mode fixes */
+        .dark .text-primary {
+            color: #5c6aff !important;
+        }
+        
+        .dark .bg-primary\/10 {
+            background-color: rgba(92, 106, 255, 0.15) !important;
+        }
+        
+        .dark .border-primary {
+            border-color: #5c6aff !important;
+        }
+        
+        .dark .text-gray-600 {
+            color: #cbd5e1 !important;
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #1e293b !important;
+        }
+        
+        .dark .text-green-600 {
+            color: #4ade80 !important;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            section {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+        
+        /* Typing animation for hero */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        
+        .typing-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #3b4bff;
+            animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
+        }
+        
+        @media (max-width: 640px) {
+            .typing-text {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 dark:bg-dark dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
+    <header class="fixed w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md z-50 shadow-sm animate-slide-down">
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-primary tracking-tight hover:scale-105 transition-transform duration-300">RDV</a>
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <div id="menu-btn" class="hamburger md:hidden">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </div>
+                    <nav id="nav-container" class="nav-container md:relative md:transform-none md:h-auto md:bg-transparent md:backdrop-filter-none">
+                        <div class="nav-links flex flex-col md:flex-row md:space-x-6 lg:space-x-8">
+                            <a href="#home" class="nav-link text-lg md:text-base font-medium">Home</a>
+                            <a href="#about" class="nav-link text-lg md:text-base font-medium">About</a>
+                            <a href="#skills" class="nav-link text-lg md:text-base font-medium">Skills</a>
+                            <a href="#projects" class="nav-link text-lg md:text-base font-medium">Projects</a>
+                            <a href="#experience" class="nav-link text-lg md:text-base font-medium">Experience</a>
+                            <a href="#contact" class="nav-link text-lg md:text-base font-medium">Contact</a>
+                        </div>
+                    </nav>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition transform hover:scale-110">
+                        <i class="fas fa-moon dark:hidden text-gray-700"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full animate-float blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full animate-float blur-3xl" style="animation-delay: 1.5s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-32 h-32 bg-primary/10 rounded-full animate-spin-slow blur-xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32 flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 relative z-10">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 animate-fade-in-up">
+                    Hi, I'm <span class="text-primary relative inline-block">
+                        Romulo David Valerio
+                    </span>
+                </h1>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    Full Stack Developer & IT Support
+                </h2>
+                <p class="text-base md:text-lg mb-6 text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s;">
+                    Building database-driven web apps, solving technical challenges, and supporting institutional operations with PHP, Laravel, React, and hands-on IT expertise.
+                </p>
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <a href="#projects" class="bg-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg hover:bg-indigo-700 transition shadow-md font-medium transform hover:scale-105 transition-all duration-300">View Projects</a>
+                    <a href="#contact" class="border-2 border-primary text-primary dark:text-primaryDark px-5 py-2.5 md:px-6 md:py-3 rounded-lg hover:bg-primary/10 transition font-medium transform hover:scale-105 transition-all duration-300">Contact Me</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-fade-in-right" style="animation-delay: 0.3s;">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-primary/20 rounded-full animate-pulse-glow group-hover:scale-110 transition-transform duration-500"></div>
+                    <div class="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center relative">
+                        <img src="prof_pic.jfif" alt="Romulo David Valerio" width="288" height="288" loading="lazy" class="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-64 lg:h-64 rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute -bottom-3 -right-3 bg-white dark:bg-slate-800 p-2 rounded-full shadow-lg animate-bounce-subtle">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-white text-base sm:text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-20 bg-gray-50 dark:bg-slate-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 animate-on-scroll animate-fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-primary">Me</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="md:w-1/3 flex justify-center animate-on-scroll animate-fade-left">
+                    <div class="relative group">
+                        <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-lg overflow-hidden shadow-xl">
+                            <img src="prof_pic2.jpg" alt="About Romulo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 bg-white dark:bg-slate-800 p-2 rounded-lg shadow-lg animate-float">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-user-cog text-white text-base sm:text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 animate-on-scroll animate-fade-right">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-4">Full Stack Developer & IT Support Professional</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-5 leading-relaxed">
+                        Experienced in developing database-driven web applications, troubleshooting technical systems, and supporting institutional operations. Skilled in PHP, Laravel, MySQL, JavaScript, and system maintenance across private enterprises and government institutions.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-start gap-3 transform hover:translate-x-1 transition-transform duration-300">
+                            <div class="bg-primary/10 dark:bg-primary/15 p-2.5 rounded-full flex-shrink-0"><i class="fas fa-graduation-cap text-primary"></i></div>
+                            <div><h4 class="font-semibold">Education</h4><p class="text-gray-600 dark:text-gray-300 text-sm">BS Information Technology</p><p class="text-gray-500 dark:text-gray-400 text-xs">Capitol University, 2021-2024</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 transform hover:translate-x-1 transition-transform duration-300">
+                            <div class="bg-primary/10 dark:bg-primary/15 p-2.5 rounded-full flex-shrink-0"><i class="fas fa-map-marker-alt text-primary"></i></div>
+                            <div><h4 class="font-semibold">Location</h4><p class="text-gray-600 dark:text-gray-300 text-sm">P-2, Cabubuhan, Magsaysay</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 transform hover:translate-x-1 transition-transform duration-300">
+                            <div class="bg-primary/10 dark:bg-primary/15 p-2.5 rounded-full flex-shrink-0"><i class="fas fa-envelope text-primary"></i></div>
+                            <div><h4 class="font-semibold">Email</h4><p class="text-gray-600 dark:text-gray-300 text-sm break-all">romvals42@gmail.com</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 transform hover:translate-x-1 transition-transform duration-300">
+                            <div class="bg-primary/10 dark:bg-primary/15 p-2.5 rounded-full flex-shrink-0"><i class="fas fa-phone-alt text-primary"></i></div>
+                            <div><h4 class="font-semibold">Phone</h4><p class="text-gray-600 dark:text-gray-300 text-sm">09910159874</p></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://github.com/romvals" target="_blank" class="flex items-center bg-gray-200 dark:bg-slate-700 px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition transform hover:scale-105 duration-300"><i class="fab fa-github mr-2"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/romulo-david-valerio-02519a321" target="_blank" class="flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition transform hover:scale-105 duration-300"><i class="fab fa-linkedin-in mr-2"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 animate-on-scroll animate-fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Skills <span class="text-primary">Expertise</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <div class="animate-on-scroll animate-fade-left">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6">Technical Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1 gap-1">
+                                <span class="text-sm md:text-base"><strong>PHP | SQL | JavaScript | HTML | CSS</strong></span>
+                                <span class="text-sm text-primary font-medium">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between mb-1 gap-1">
+                                <span class="text-sm md:text-base"><strong>Laravel | React | WordPress | Bootstrap | Tailwind CSS | jQuery</strong></span>
+                                <span class="text-sm text-primary font-medium">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between mb-1 gap-1">
+                                <span class="text-sm md:text-base"><strong>MySQL | SQLyog | PHPmyAdmin | PowerBI</strong></span>
+                                <span class="text-sm text-primary font-medium">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between mb-1 gap-1">
+                                <span class="text-sm md:text-base"><strong>Git | GitHub</strong></span>
+                                <span class="text-sm text-primary font-medium">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between mb-1 gap-1">
+                                <span class="text-sm md:text-base"><strong>MS Office | Google Workspace</strong></span>
+                                <span class="text-sm text-primary font-medium">98%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 98%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between mb-1 gap-1">
+                                <span class="text-sm md:text-base"><strong>IT Support | Troubleshooting</strong></span>
+                                <span class="text-sm text-primary font-medium">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll animate-fade-right">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6">Soft Skills</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 dark:bg-slate-800 p-4 md:p-5 rounded-xl shadow-sm text-center transform hover:scale-105 transition-all duration-300">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 dark:bg-primary/15 rounded-full flex items-center justify-center mb-3 mx-auto animate-float">
+                                <i class="fas fa-comments text-primary text-base md:text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-sm md:text-base">Communication & Collaboration</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Effective team coordination</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-800 p-4 md:p-5 rounded-xl shadow-sm text-center transform hover:scale-105 transition-all duration-300">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 dark:bg-primary/15 rounded-full flex items-center justify-center mb-3 mx-auto animate-float" style="animation-delay: 0.5s;">
+                                <i class="fas fa-sync-alt text-primary text-base md:text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-sm md:text-base">Adaptability</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Quick learning & flexibility</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-800 p-4 md:p-5 rounded-xl shadow-sm text-center transform hover:scale-105 transition-all duration-300">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 dark:bg-primary/15 rounded-full flex items-center justify-center mb-3 mx-auto animate-float" style="animation-delay: 1s;">
+                                <i class="fas fa-clock text-primary text-base md:text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-sm md:text-base">Time Management</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Prioritization & deadlines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-20 bg-gray-50 dark:bg-slate-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 animate-on-scroll animate-fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Key <span class="text-primary">Projects</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-sm md:text-base">Systems developed for academic institutions and government units</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+                <!-- Project cards with staggered animation -->
+                <div class="project-card bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md animate-on-scroll animate-scale" style="transition-delay: 0.1s;" onclick="openModal('enrollmentModal')">
+                    <div class="h-40 sm:h-48 overflow-hidden bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
+                        <img src="city_college_cdo.jpg" alt="College Enrollment Form" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x300/3b4bff/white?text=City+College'">
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                            <h3 class="text-lg md:text-xl font-bold">College Enrollment Form</h3>
+                            <span class="bg-primary/10 dark:bg-primary/15 text-primary text-xs px-2 py-1 rounded-full text-center">School System</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm md:text-base">College students can enroll through the online enrollment form.</p>
+                        <button class="text-primary font-medium flex items-center gap-1 text-sm md:text-base group">
+                            View Details <i class="fas fa-arrow-right text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md animate-on-scroll animate-scale" style="transition-delay: 0.2s;" onclick="openModal('gradingModal')">
+                    <div class="h-40 sm:h-48 overflow-hidden bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                        <img src="city_college_cdo.jpg" alt="Student Grading System" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x300/3b4bff/white?text=Grading+System'">
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                            <h3 class="text-lg md:text-xl font-bold">Student Grading System</h3>
+                            <span class="bg-primary/10 dark:bg-primary/15 text-primary text-xs px-2 py-1 rounded-full text-center">School System</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm md:text-base">Digital student grading and reporting system with real-time dashboards.</p>
+                        <button class="text-primary font-medium flex items-center gap-1 text-sm md:text-base group">
+                            View Details <i class="fas fa-arrow-right text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md animate-on-scroll animate-scale" style="transition-delay: 0.3s;" onclick="openModal('scheduleModal')">
+                    <div class="h-40 sm:h-48 overflow-hidden bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
+                        <img src="city_college_cdo.jpg" alt="Class Schedule" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x300/3b4bff/white?text=Class+Schedule'">
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                            <h3 class="text-lg md:text-xl font-bold">Class Schedule</h3>
+                            <span class="bg-primary/10 dark:bg-primary/15 text-primary text-xs px-2 py-1 rounded-full text-center">School System</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm md:text-base">Manage and update class schedules in real-time.</p>
+                        <button class="text-primary font-medium flex items-center gap-1 text-sm md:text-base group">
+                            View Details <i class="fas fa-arrow-right text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md animate-on-scroll animate-scale" style="transition-delay: 0.4s;" onclick="openModal('profileModal')">
+                    <div class="h-40 sm:h-48 overflow-hidden bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                        <img src="city_college_cdo.jpg" alt="Account Profile" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x300/3b4bff/white?text=Account+Profile'">
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                            <h3 class="text-lg md:text-xl font-bold">Account Profile</h3>
+                            <span class="bg-primary/10 dark:bg-primary/15 text-primary text-xs px-2 py-1 rounded-full text-center">School System</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm md:text-base">User information and settings management system.</p>
+                        <button class="text-primary font-medium flex items-center gap-1 text-sm md:text-base group">
+                            View Details <i class="fas fa-arrow-right text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md animate-on-scroll animate-scale" style="transition-delay: 0.5s;" onclick="openModal('classroomModal')">
+                    <div class="h-40 sm:h-48 overflow-hidden bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                        <img src="city_college_cdo.jpg" alt="Classroom Management" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x300/3b4bff/white?text=Classroom+Management'">
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                            <h3 class="text-lg md:text-xl font-bold">Classroom Management</h3>
+                            <span class="bg-primary/10 dark:bg-primary/15 text-primary text-xs px-2 py-1 rounded-full text-center">School System</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm md:text-base">Digital Classroom Setup with room availability, occupancy tracking.</p>
+                        <button class="text-primary font-medium flex items-center gap-1 text-sm md:text-base group">
+                            View Details <i class="fas fa-arrow-right text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md animate-on-scroll animate-scale" style="transition-delay: 0.6s;" onclick="openModal('govpageModal')">
+                    <div class="h-40 sm:h-48 overflow-hidden bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center p-3 sm:p-4">
+                        <img src="lgu-magsaysay.png" alt="Municipality of Magsaysay Government Page" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/400x300/3b4bff/white?text=Magsaysay+Government'">
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+                            <h3 class="text-lg md:text-xl font-bold">Municipality of Magsaysay</h3>
+                            <span class="bg-primary/10 dark:bg-primary/15 text-primary text-xs px-2 py-1 rounded-full text-center">Government</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm md:text-base">Official digital portal showcasing local governance and community updates.</p>
+                        <button class="text-primary font-medium flex items-center gap-1 text-sm md:text-base group">
+                            View Details <i class="fas fa-arrow-right text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 animate-on-scroll animate-fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Work <span class="text-primary">Experience</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="space-y-6 md:space-y-8">
+                <div class="bg-white dark:bg-slate-800 p-5 md:p-7 rounded-xl shadow-md border-l-4 border-primary animate-on-scroll animate-fade-left">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-2">
+                        <h3 class="text-xl md:text-2xl font-bold">IT Support and Web Developer</h3>
+                        <span class="text-primary font-semibold text-sm md:text-base">Apr 2026 – Present</span>
+                    </div>
+                    <h4 class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-3">Magsaysay Municipal Hall, Poblacion, Magsaysay, Misamis Oriental</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                        <li>Developed and implemented a digitized employee credential management system</li>
+                        <li>Provide technical support for software, hardware, printers, and network-related issues</li>
+                        <li>Installation, configuration, troubleshooting, and maintenance of office systems and equipment</li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-5 md:p-7 rounded-xl shadow-md border-l-4 border-primary animate-on-scroll animate-fade-right">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-2">
+                        <h3 class="text-xl md:text-2xl font-bold">Full Stack Developer</h3>
+                        <span class="text-primary font-semibold text-sm md:text-base">Feb 2025 – Feb 2026</span>
+                    </div>
+                    <h4 class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-3">City College of Cagayan de Oro, Agusan, CDO</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                        <li>Developed Student Grading, Online Enrollment, Section Blocking, Account Management, Classroom Management</li>
+                        <li>Designed Nurse Portal with QR-based record access and real-time health dashboards</li>
+                        <li>Built Training Profiler Systems for participant management and reporting, API controllers for grading/schedule</li>
+                        <li>Resolved hardware, software, network issues; conducted technology training sessions</li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-5 md:p-7 rounded-xl shadow-md border-l-4 border-primary animate-on-scroll animate-fade-left">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-2">
+                        <h3 class="text-xl md:text-2xl font-bold">Full Stack Developer</h3>
+                        <span class="text-primary font-semibold text-sm md:text-base">May 2024 – Sep 2024</span>
+                    </div>
+                    <h4 class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-3">CK Children's Publishing, Indahag, CDO</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                        <li>Developed School Management System: Building/Classroom Setup, Registrar Portal (conflict detection), Student Attendance</li>
+                        <li>Created API controller for student list monitoring and resolved system bugs</li>
+                        <li>Collaborated via GitHub following MVC best practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainings & Awards Section -->
+    <section id="additional" class="py-16 bg-gray-50 dark:bg-slate-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                <div class="animate-on-scroll animate-fade-left">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 text-primary">Trainings & Seminars</h3>
+                    <ul class="space-y-3">
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-certificate text-primary mt-1"></i><span><strong>Introduction to Cybersecurity</strong> – DICT Region X (Mar 26, 2025)</span></li>
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-certificate text-primary mt-1"></i><span><strong>Hour of Code</strong> – ASEAN Foundation (Sep 20, 2025)</span></li>
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-certificate text-primary mt-1"></i><span><strong>RISE Learning Academy</strong> – City College of CDO (Sep 26, 2025)</span></li>
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-certificate text-primary mt-1"></i><span><strong>Gender Sensitivity in the Workplace</strong> – City College of CDO (Mar 18, 2025)</span></li>
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-certificate text-primary mt-1"></i><span><strong>CHED Consultative Session / IBPAP-PSIA Tour de Tech</strong> – CHED Region X (Nov 14, 2023)</span></li>
+                    </ul>
+                </div>
+                <div class="animate-on-scroll animate-fade-right">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 text-primary">Awards & Recognitions</h3>
+                    <ul class="space-y-3">
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-trophy text-primary mt-1"></i><span><strong>Paper Presentation Award</strong> – City College of CDO (Dec 12, 2025)</span></li>
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-users text-primary mt-1"></i><span><strong>TWG Member</strong> – ASEAN Conference on Extension for SDGs (Nov 29, 2025)</span></li>
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-chalkboard-user text-primary mt-1"></i><span><strong>Resource Speaker</strong> – Andam Trabaho: Employment Application Documents (Aug 29, 2025)</span></li>
+                        <li class="flex gap-3 text-sm md:text-base transform hover:translate-x-1 transition-transform duration-300"><i class="fas fa-chalkboard-user text-primary mt-1"></i><span><strong>Resource Speaker</strong> – ICT LEAP 2025 (Apr 22, 2025)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & References -->
+    <section id="contact" class="py-16 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16 animate-on-scroll animate-fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-primary">Touch</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+                <div class="md:w-1/2 animate-on-scroll animate-fade-left">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 transform hover:translate-x-1 transition-transform duration-300"><div class="bg-primary/10 dark:bg-primary/15 p-3 rounded-full"><i class="fas fa-map-marker-alt text-primary"></i></div><div><p class="font-medium text-sm md:text-base">P-2, Cabubuhan, Magsaysay, Misamis Oriental</p></div></div>
+                        <div class="flex items-center gap-4 transform hover:translate-x-1 transition-transform duration-300"><div class="bg-primary/10 dark:bg-primary/15 p-3 rounded-full"><i class="fas fa-envelope text-primary"></i></div><div><p class="font-medium text-sm md:text-base break-all">romvals42@gmail.com</p></div></div>
+                        <div class="flex items-center gap-4 transform hover:translate-x-1 transition-transform duration-300"><div class="bg-primary/10 dark:bg-primary/15 p-3 rounded-full"><i class="fas fa-phone-alt text-primary"></i></div><div><p class="font-medium text-sm md:text-base">09910159874</p></div></div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate-on-scroll animate-fade-right">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6">Professional References</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 italic text-sm md:text-base">Available upon request — I'd be happy to provide references during interview process.</p>
+                    <div class="bg-gray-50 dark:bg-slate-800 p-4 md:p-5 rounded-xl transform hover:scale-105 transition-all duration-300">
+                        <p class="flex items-center gap-2 text-sm md:text-base"><i class="fas fa-check-circle text-primary"></i> Verified work experience at Magsaysay Municipal Hall, City College of CDO & CK Publishing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 dark:bg-slate-900 py-8 md:py-10">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base animate-pulse">&copy; 2026 Romulo David Valerio. Full Stack Developer & IT Support.</p>
+        </div>
+    </footer>
+
+    <!-- Modals (simplified but functional) -->
+    <div id="enrollmentModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black/50 backdrop-blur-sm">
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="bg-white dark:bg-slate-800 rounded-xl max-w-3xl w-full p-6">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-bold">Student Grading & Enrollment System</h3>
+                    <button onclick="closeModal('enrollmentModal')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="mt-4">
+                    <video controls class="w-full rounded-lg" muted playsinline disableRemotePlayback style="pointer-events: auto;">
+                        <source src="aims_college_enrollment.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Features heading -->
+                    <h4 class="font-semibold text-lg mt-5 mb-3 text-gray-800 dark:text-gray-200">Features:</h4>
+                    
+                    <!-- Two-column grid layout to reduce right space -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Academics Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Type of Scholar Package</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Personal Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Contact Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Parents Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Employment Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Educational Background</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Additional Needs</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>In Case of Emergency</span></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal('enrollmentModal')" class="bg-primary text-white px-4 py-2 rounded-lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gradingModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black/50 backdrop-blur-sm">
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="bg-white dark:bg-slate-800 rounded-xl max-w-3xl w-full p-6">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-bold">Student Grading System</h3>
+                    <button onclick="closeModal('gradingModal')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="mt-4">
+                    <video controls class="w-full rounded-lg" muted playsinline disableRemotePlayback style="pointer-events: auto;">
+                        <source src="aims_student_grade.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Features heading -->
+                    <h4 class="font-semibold text-lg mt-5 mb-3 text-gray-800 dark:text-gray-200">Features:</h4>
+                    
+                    <!-- Two-column grid layout to reduce right space -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Academic Filters</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Academic Honors List</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Student Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Student Grade</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Grade Remarks Guide</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Remarks Qualification Indication</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Auto Calculate GPA</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Color Indication</span></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal('gradingModal')" class="bg-primary text-white px-4 py-2 rounded-lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="scheduleModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black/50 backdrop-blur-sm">
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="bg-white dark:bg-slate-800 rounded-xl max-w-3xl w-full p-6">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-bold">Class Schedule</h3>
+                    <button onclick="closeModal('scheduleModal')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="mt-4">
+                    <video controls class="w-full rounded-lg" muted playsinline disableRemotePlayback style="pointer-events: auto;">
+                        <source src="aims_class_schedule.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Features heading -->
+                    <h4 class="font-semibold text-lg mt-5 mb-3 text-gray-800 dark:text-gray-200">Features:</h4>
+                    
+                    <!-- Two-column grid layout to reduce right space -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Academic Filters</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Section Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Schedule Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Print or Save as PDF Class Schedule</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Plotting Class Schedule</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Create, Update, Delete Custom Schedules</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Auto Class Schedule Conflict Detection</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Swap Schedules</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Reset Schedules</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Merge Schedules</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Morning & Evening Schedule Filters</span></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal('scheduleModal')" class="bg-primary text-white px-4 py-2 rounded-lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="profileModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black/50 backdrop-blur-sm">
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="bg-white dark:bg-slate-800 rounded-xl max-w-3xl w-full p-6">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-bold">Account Profile</h3>
+                    <button onclick="closeModal('profileModal')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="mt-4">
+                    <video controls class="w-full rounded-lg" muted playsinline disableRemotePlayback style="pointer-events: auto;">
+                        <source src="aims_account_profile.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Features heading -->
+                    <h4 class="font-semibold text-lg mt-5 mb-3 text-gray-800 dark:text-gray-200">Features:</h4>
+                    
+                    <!-- Two-column grid layout to reduce right space -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Personal Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Contact Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Address Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Add & Update Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Add Profile Picture</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Profile Picture Guide</span></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal('profileModal')" class="bg-primary text-white px-4 py-2 rounded-lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="classroomModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black/50 backdrop-blur-sm">
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="bg-white dark:bg-slate-800 rounded-xl max-w-3xl w-full p-6">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-bold">Classroom Management</h3>
+                    <button onclick="closeModal('classroomModal')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="mt-4">
+                    <video controls class="w-full rounded-lg" muted playsinline disableRemotePlayback style="pointer-events: auto;">
+                        <source src="aims_classroom_management.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Features heading -->
+                    <h4 class="font-semibold text-lg mt-5 mb-3 text-gray-800 dark:text-gray-200">Features:</h4>
+                    
+                    <!-- Two-column grid layout to reduce right space -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Classroom Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Room Class Schedule Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Add & Update Classroom</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Add & Update Days for Class Schedule</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Academic, Room & Days Filter</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Rooms Occupancy & Vacancy Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Rooms Schedule Slot Information</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Room, Day & Status Filter</span></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal('classroomModal')" class="bg-primary text-white px-4 py-2 rounded-lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="govpageModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black/50 backdrop-blur-sm">
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="bg-white dark:bg-slate-800 rounded-xl max-w-3xl w-full p-6">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-bold">Government Page</h3>
+                    <button onclick="closeModal('govpageModal')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="mt-4">
+                    <video controls class="w-full rounded-lg" muted playsinline disableRemotePlayback style="pointer-events: auto;">
+                        <source src="magsaysay_gov_page.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Features heading -->
+                    <h4 class="font-semibold text-lg mt-5 mb-3 text-gray-800 dark:text-gray-200">Features:</h4>
+                    
+                    <!-- Two-column grid layout to reduce right space -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-2">
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Municipal Profile</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Officials Directory</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Geography and Demography</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>News & Announcements</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>Photo & Video Gallery</span></div>
+                        <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-900 text-sm mt-0.5 flex-shrink-0"></i><span>SikatAI chat</span></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal('govpageModal')" class="bg-primary text-white px-4 py-2 rounded-lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    animationObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        animatedElements.forEach(el => animationObserver.observe(el));
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        themeToggle?.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+        
+        // Mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const navContainer = document.getElementById('nav-container');
+        if (menuBtn && navContainer) {
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('open');
+                navContainer.classList.toggle('open');
+                document.body.style.overflow = navContainer.classList.contains('open') ? 'hidden' : '';
+            });
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 768) {
+                        menuBtn.classList.remove('open');
+                        navContainer.classList.remove('open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+        
+        // Skill bars observer
+        const skillBars = document.querySelectorAll('.skill-progress');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => bar.style.width = width, 1000);
+                    skillObserver.unobserve(bar);
+                }
+            });
+        }, { threshold: 0.3 });
+        skillBars.forEach(bar => skillObserver.observe(bar));
+        
+        // Modal functions
+        window.openModal = (id) => {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+        };
+        
+        window.closeModal = (id) => {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+                const video = modal.querySelector('video');
+                if (video) video.pause();
+            }
+        };
+        
+        window.onclick = (e) => {
+            if (e.target.classList?.contains('bg-black/70')) {
+                document.querySelectorAll('[id$="Modal"]').forEach(modal => {
+                    modal.classList.add('hidden');
+                });
+                document.body.classList.remove('overflow-hidden');
+            }
+        };
+        
+        // Force mute videos
+        function forceMuteVideos() {
+            document.querySelectorAll('video').forEach(video => {
+                video.muted = true;
+                video.addEventListener('volumechange', function() {
+                    if (!this.muted) this.muted = true;
+                });
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', forceMuteVideos);
+        
+        const videoObserver = new MutationObserver(() => forceMuteVideos());
+        videoObserver.observe(document.body, { childList: true, subtree: true });
+    </script>
+</body>
+</html>
